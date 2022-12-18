@@ -8,9 +8,9 @@ let windowwidth = window.innerWidth || document.documentElement.clientWidth || 0
 			];
 		} else {
 			var responsiveImage = [//タブレット（768px）以下用の画像
-				{ src: 'img/main.jpg'},
-				{ src: 'img/wallspace.jpg'},
-				{ src: 'img/img4.jpg'}
+				{ src: 'img/main-sp1.webp'},
+				{ src: 'img/main-sp2.webp'},
+				{ src: 'img/main-sp3.webp'}
 			];
 		}
 
