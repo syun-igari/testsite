@@ -246,7 +246,7 @@ header::before {
 -------------------------*/
 @media screen and (max-width: 768px) {
   .nav__wrapper {
-    background-color: #323232;
+    background-color: #000;
     width: 100%;
     height: 100vh;
     padding: 90px 0 0 0;
