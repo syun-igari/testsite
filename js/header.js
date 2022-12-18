@@ -12,11 +12,21 @@ mobilebtn.addEventListener('click', function () {
 })
 
 window.addEventListener('load', function () {
+  // trigger.map((item, index) => {
+  //   item.classList.add('bgLRextend');
+  // })
+  // trigger2.map((item, index) => {
+  //   item.classList.add('bgappear');
+  // })
+  setTimeout('triggers();', 1500)
+  getscroll.classList.add('blur');
+})
+
+function triggers() {
   trigger.map((item, index) => {
     item.classList.add('bgLRextend');
   })
   trigger2.map((item, index) => {
     item.classList.add('bgappear');
   })
-  getscroll.classList.add('blur');
-})
+}
