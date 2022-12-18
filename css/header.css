@@ -1,0 +1,508 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+/*-------------------------
+  headerの背景画像設定
+-------------------------*/
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #000;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+#slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+
+}
+
+/*-------------------------
+  navの設定
+-------------------------*/
+.header-nav {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  justify-content: space-between;
+}
+
+/*-------------------------
+  logoの設定
+-------------------------*/
+.header-log {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 40px;
+  padding-top: 40px;
+}
+
+.header-log a {
+  display: block;
+  width: 400px;
+}
+
+.header-log a img {
+  width: 400px
+}
+
+@media screen and (max-width: 1000px) {
+  .header-log {
+    width: 320px;
+    padding-left: 20px;
+    padding-top: 20px;
+
+  }
+
+  .header-log a {
+    width: 320px;
+  }
+
+  .header-log a img {
+    width: 320px
+  }
+
+  .header-log.active {
+    position: fixed;
+    top: -2.5px;
+    z-index: 800;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header-log {
+    width: 230px;
+    padding-left: 5px;
+    padding-top: 5px;
+
+  }
+
+  .header-log a {
+    width: 230px;
+  }
+
+  .header-log a img {
+    width: 230px
+  }
+
+  .header-log.active {
+    position: fixed;
+    top: -5.8px;
+    z-index: 3;
+  }
+
+  .header-log.active {
+    position: fixed;
+    top: 15.8px;
+    z-index: 800;
+  }
+}
+
+/*-------------------------
+  ハンバーガーメニュー設定（ボタン）
+-------------------------*/
+.mobile-cover {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .header-nav {
+    height: 100px;
+  }
+
+  .mobile-cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+  }
+
+  .mobile-menu {
+    cursor: pointer;
+    width: 80px;
+    height: 82px;
+    border-radius: 5px;
+    position: fixed;
+    right: 0;
+    top: 2px;
+    z-index: 999;
+
+  }
+
+  .mobile-menu span {
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+  }
+
+  .mobile-menu span:nth-of-type(1),
+  .mobile-menu span:nth-of-type(3) {
+    height: 3px;
+    background-color: #fff;
+    width: 62%;
+    left: 12px;
+  }
+
+  .mobile-menu span:nth-of-type(1) {
+    top: 22px;
+  }
+
+  .mobile-menu span:nth-of-type(2) {
+    top: 30px;
+    left: 22px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #FFF;
+  }
+
+  .mobile-menu span:nth-of-type(3) {
+    top: 50px;
+  }
+
+  .mobile-menu.action span:nth-of-type(1) {
+    top: 23px;
+    left: 23px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+  }
+
+  .mobile-menu.action span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu.action span:nth-of-type(3) {
+    top: 35px;
+    left: 23px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+  }
+}
+
+/*-------------------------
+  navのナビゲーション部分設定（PC）
+-------------------------*/
+.nav__wrapper {
+  width: 55%;
+}
+
+.nav__wrapper ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.nav__wrapper ul li {
+  height: 100%;
+  width: 100%;
+  border: dashed 1px rgba(255, 255, 255, 0.2);
+}
+
+.nav__wrapper ul li:nth-of-type(5) {
+  background-color: #000080;
+}
+
+.nav__wrapper ul li a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+}
+
+.nav__wrapper ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.5s;
+}
+
+/*-------------------------
+  navのナビゲーションのレスポンシブ設定
+-------------------------*/
+@media screen and (max-width: 768px) {
+  .nav__wrapper {
+    background-color: #323232;
+    width: 100%;
+    height: 100vh;
+    padding: 90px 0 0 0;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: .5s;
+    z-index:700;
+  }
+
+  .nav__wrapper.active {
+    right: 0;
+  }
+
+  .nav__wrapper ul {
+    display: block;
+    height: 80px;
+  }
+}
+
+.top-phrase{
+  height: 600px;
+  display: flex;
+  align-items:center;
+  justify-content: flex-start;
+  color: #fff;
+  padding-left: 150px;
+}
+.first{
+font-size: 4.2rem;
+line-height: 5.5rem;
+font-weight: 500;
+}
+
+
+.second{
+  font-size: 4.2rem;
+  margin-top: 20px;
+}
+
+.small{
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-top: 40px;
+  width: 50%;
+}
+
+@media screen and (max-width: 1150px) {
+  .top-phrase{
+    padding-left: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top-phrase{
+    height: 720px;
+    justify-content: center;
+    padding:0;
+  }
+  .first{
+  font-size: 3.2rem;
+  line-height: 3.8rem;
+  }
+  
+  .second{
+    font-size: 3.2rem;
+    margin-top: 20px;
+  }
+  
+  .small{
+    font-size: 1.4rem;
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .top-phrase{
+    height: 600px;
+    justify-content: center;
+    padding:0;
+  }
+  .first{
+  font-size: 2rem;
+  line-height: 2.3rem;
+  }
+  
+  .second{
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+  
+  .small{
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+}
+/*-------------------------
+  横から白い背景が伸びるアニメーション
+-------------------------*/
+.bgextend{
+	animation-name:bgextendAnimeBase;
+	animation-duration:2s;
+  animation-delay: 1s;
+	animation-fill-mode:forwards;
+	position: relative;
+	overflow: hidden;/*　はみ出た色要素を隠す　*/
+	opacity:0;
+  color: #fff;
+ 
+}
+
+@keyframes bgextendAnimeBase{
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;  
+}
+}
+
+/*中の要素*/
+.bgappear{
+	animation-name:bgextendAnimeSecond;
+	animation-duration:1s;
+	animation-delay: 1s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes bgextendAnimeSecond{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
+
+/*左から右*/
+.bgLRextend::before{
+	animation-name:bgLRextendAnime;
+	animation-duration:1s;
+  animation-delay: 1s;
+	animation-fill-mode:forwards;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;/*伸びる背景色の設定*/
+}
+@keyframes bgLRextendAnime{
+	0% {
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+	50% {
+		transform-origin:left;
+		transform:scaleX(1);
+	}
+	50.001% {
+		transform-origin:right;
+	}
+	100% {
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+}
+
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+.bgappearTrigger,
+.bgLRextendTrigger{
+    opacity: 0;
+}
+
+
+/*=== 9-1-2 丸が動いてスクロールを促す ====*/
+
+/*スクロールダウン全体の場所*/
+.scrolldown2{
+  /*描画位置※位置は適宜調整してください*/
+position:absolute;
+bottom:30px;
+right:5%;
+}
+
+/*Scrollテキストの描写*/
+.scrolldown2 span{
+  /*描画位置*/
+position: absolute;
+left:10px;
+bottom:10px;
+  /*テキストの形状*/
+color: #eee;
+font-size: 0.7rem;
+letter-spacing: 0.05em;
+/*縦書き設定*/
+-ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+/* 丸の描写 */
+.scrolldown2:before {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom:0;
+  left:-4px;
+  /*丸の形状*/
+width:10px;
+height:10px;
+border-radius: 50%;
+background:#eee;
+  /*丸の動き1.6秒かけて透過し、永遠にループ*/
+animation:
+  circlemove 1.6s ease-in-out infinite,
+  cirlemovehide 1.6s ease-out infinite;
+}
+
+/*下からの距離が変化して丸の全体が上から下に動く*/
+@keyframes circlemove{
+    0%{bottom:45px;}
+   100%{bottom:-5px;}
+}
+
+/*上から下にかけて丸が透過→不透明→透過する*/
+@keyframes cirlemovehide{
+    0%{opacity:0}
+   50%{opacity:1;}
+  80%{opacity:0.9;}
+100%{opacity:0;}
+}
+
+/* 線の描写 */
+.scrolldown2:after{
+content:"";
+  /*描画位置*/
+position: absolute;
+bottom:0;
+left:0;
+  /*線の形状*/
+width:2px;
+height: 50px;
+background:#eee;
+}
+
+@media screen and (max-width: 768px) {
+  .scrolldown2{
+    /*描画位置※位置は適宜調整してください*/
+  position:absolute;
+  bottom:10%;
+  right:50%;
+  }
+}
+main {
+  height: 10000px;
+}
