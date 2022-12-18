@@ -305,30 +305,33 @@ font-weight: 500;
 
 @media screen and (max-width: 768px) {
   .top-phrase{
-    height: 720px;
+    height: 500px;
     justify-content: center;
     padding:0;
   }
   .first{
   font-size: 3.2rem;
   line-height: 3.8rem;
+  font-weight: 600;
   }
   
   .second{
     font-size: 3.2rem;
     margin-top: 20px;
+    font-weight: 600;
   }
   
   .small{
     font-size: 1.4rem;
     margin-top: 20px;
+    font-weight: 300;
     width: 100%;
   }
 }
 
 @media screen and (max-width: 575px) {
   .top-phrase{
-    height: 550px;
+    height: 400px;
     justify-content: center;
     padding:0;
   }
@@ -498,7 +501,7 @@ height: 50px;
 background:#eee;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .scrolldown2{
     /*描画位置※位置は適宜調整してください*/
   position:absolute;
