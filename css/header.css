@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -113,14 +114,9 @@ header::before {
 
   .header-log.active {
     position: fixed;
-    top: -5.8px;
-    z-index: 3;
-  }
-
-  .header-log.active {
-    position: fixed;
     top: 15.8px;
     z-index: 800;
+    transition: position 3s
   }
 }
 
@@ -130,6 +126,7 @@ header::before {
 .mobile-cover {
   display: none;
 }
+
 @media screen and (max-width: 768px) {
   .header-nav {
     height: 100px;
@@ -254,7 +251,7 @@ header::before {
     top: 0;
     right: -100%;
     transition: .5s;
-    z-index:700;
+    z-index: 700;
   }
 
   .nav__wrapper.active {
@@ -265,32 +262,34 @@ header::before {
     display: block;
     height: 80px;
   }
+
   .nav__wrapper ul li {
- border: none;
+    border: none;
   }
 }
 
-.top-phrase{
+.top-phrase {
   height: 600px;
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: flex-start;
   color: #fff;
   padding-left: 150px;
 }
-.first{
-font-size: 4.2rem;
-line-height: 5.5rem;
-font-weight: 500;
+
+.first {
+  font-size: 4.2rem;
+  line-height: 5.5rem;
+  font-weight: 500;
 }
 
 
-.second{
+.second {
   font-size: 4.2rem;
   margin-top: 20px;
 }
 
-.small{
+.small {
   font-size: 1.8rem;
   font-weight: 300;
   margin-top: 40px;
@@ -298,30 +297,31 @@ font-weight: 500;
 }
 
 @media screen and (max-width: 1150px) {
-  .top-phrase{
+  .top-phrase {
     padding-left: 50px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .top-phrase{
+  .top-phrase {
     height: 500px;
     justify-content: center;
-    padding:0;
+    padding: 0;
   }
-  .first{
-  font-size: 3.2rem;
-  line-height: 3.8rem;
-  font-weight: 600;
+
+  .first {
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+    font-weight: 600;
   }
-  
-  .second{
+
+  .second {
     font-size: 3.2rem;
     margin-top: 20px;
     font-weight: 600;
   }
-  
-  .small{
+
+  .small {
     font-size: 1.4rem;
     margin-top: 20px;
     font-weight: 300;
@@ -330,185 +330,190 @@ font-weight: 500;
 }
 
 @media screen and (max-width: 575px) {
-  .top-phrase{
+  .top-phrase {
     height: 400px;
     justify-content: center;
-    padding:0;
+    padding: 0;
   }
-  .first{
-  font-size: 2rem;
-  line-height: 2.3rem;
+
+  .first {
+    font-size: 2rem;
+    line-height: 2.3rem;
   }
-  
-  .second{
+
+  .second {
     font-size: 2rem;
     margin-top: 20px;
   }
-  
-  .small{
+
+  .small {
     font-size: 1.2rem;
     margin-top: 20px;
   }
 }
+
 /*-------------------------
   横から白い背景が伸びるアニメーション
 -------------------------*/
-.bgextend{
-	animation-name:bgextendAnimeBase;
-	animation-duration:2s;
+.bgextend {
+  animation-name: bgextendAnimeBase;
+  animation-duration: 2s;
   animation-delay: 1s;
-	animation-fill-mode:forwards;
-	position: relative;
-	overflow: hidden;/*　はみ出た色要素を隠す　*/
-	opacity:0;
+  animation-fill-mode: forwards;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
   color: #fff;
- 
+
 }
 
-@keyframes bgextendAnimeBase{
+@keyframes bgextendAnimeBase {
   from {
-    opacity:0;
+    opacity: 0;
   }
 
   to {
-    opacity:1;  
-}
+    opacity: 1;
+  }
 }
 
 /*中の要素*/
-.bgappear{
-	animation-name:bgextendAnimeSecond;
-	animation-duration:1s;
-	animation-delay: 1s;
-	animation-fill-mode:forwards;
-	opacity: 0;
+.bgappear {
+  animation-name: bgextendAnimeSecond;
+  animation-duration: 2.5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
-@keyframes bgextendAnimeSecond{
-	0% {
-	opacity: 0;
-	}
-	100% {
-	opacity: 1;
-}
+@keyframes bgextendAnimeSecond {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /*左から右*/
-.bgLRextend::before{
-	animation-name:bgLRextendAnime;
-	animation-duration:1s;
-  animation-delay: 1s;
-	animation-fill-mode:forwards;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #FFF;/*伸びる背景色の設定*/
-}
-@keyframes bgLRextendAnime{
-	0% {
-		transform-origin:left;
-		transform:scaleX(0);
-	}
-	50% {
-		transform-origin:left;
-		transform:scaleX(1);
-	}
-	50.001% {
-		transform-origin:right;
-	}
-	100% {
-		transform-origin:right;
-		transform:scaleX(0);
-	}
+.bgLRextend::before {
+  animation-name: bgLRextendAnime;
+  animation-duration: 1s;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
 }
 
-/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+@keyframes bgLRextendAnime {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  50.001% {
+    transform-origin: right;
+  }
+
+  100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+
 .bgappearTrigger,
-.bgLRextendTrigger{
-    opacity: 0;
+.bgLRextendTrigger {
+  opacity: 0;
 }
 
 
-/*=== 9-1-2 丸が動いてスクロールを促す ====*/
-
-/*スクロールダウン全体の場所*/
-.scrolldown2{
-  /*描画位置※位置は適宜調整してください*/
-position:absolute;
-bottom:30px;
-right:5%;
+/*-------------------------
+  スクロールの設定
+-------------------------*/
+.scrolldown2 {
+  position: absolute;
+  bottom: 30px;
+  right: 5%;
 }
 
-/*Scrollテキストの描写*/
-.scrolldown2 span{
-  /*描画位置*/
-position: absolute;
-left:10px;
-bottom:10px;
-  /*テキストの形状*/
-color: #eee;
-font-size: 0.7rem;
-letter-spacing: 0.05em;
-/*縦書き設定*/
--ms-writing-mode: tb-rl;
+.scrolldown2 span {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  color: #eee;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
 }
 
-/* 丸の描写 */
 .scrolldown2:before {
   content: "";
-  /*描画位置*/
   position: absolute;
-  bottom:0;
-  left:-4px;
-  /*丸の形状*/
-width:10px;
-height:10px;
-border-radius: 50%;
-background:#eee;
-  /*丸の動き1.6秒かけて透過し、永遠にループ*/
-animation:
-  circlemove 1.6s ease-in-out infinite,
-  cirlemovehide 1.6s ease-out infinite;
+  bottom: 0;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #eee;
+  animation:
+    circlemove 1.6s ease-in-out infinite,
+    cirlemovehide 1.6s ease-out infinite;
 }
 
-/*下からの距離が変化して丸の全体が上から下に動く*/
-@keyframes circlemove{
-    0%{bottom:45px;}
-   100%{bottom:-5px;}
-}
+@keyframes circlemove {
+  0% {
+    bottom: 45px;
+  }
 
-/*上から下にかけて丸が透過→不透明→透過する*/
-@keyframes cirlemovehide{
-    0%{opacity:0}
-   50%{opacity:1;}
-  80%{opacity:0.9;}
-100%{opacity:0;}
+  100% {
+    bottom: -5px;
+  }
 }
+@keyframes cirlemovehide {
+  0% {
+    opacity: 0
+  }
 
-/* 線の描写 */
-.scrolldown2:after{
-content:"";
-  /*描画位置*/
-position: absolute;
-bottom:0;
-left:0;
-  /*線の形状*/
-width:2px;
-height: 50px;
-background:#eee;
+  50% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+.scrolldown2:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 50px;
+  background: #eee;
 }
 
 @media screen and (max-width: 1024px) {
-  .scrolldown2{
-    /*描画位置※位置は適宜調整してください*/
-  position:absolute;
-  bottom:10%;
-  right:50%;
+  .scrolldown2 {
+    bottom: 10%;
+    right: 50%;
   }
 }
+
 main {
   height: 10000px;
 }
