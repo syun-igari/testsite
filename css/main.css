@@ -1,0 +1,94 @@
+@charset "UTF-8";
+main {
+  height: 10000px;
+}
+/*-------
+擬似要素テキストが流れる
+-------*/
+.flowimg {
+  position: relative;
+  padding: 10vw 10vw;
+  overflow: hidden;
+}
+
+.flowimg::before,
+.flowimg::after {
+  content: "FLOWING";
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  height: auto;
+  color: #000;
+  font-size: 20vw;
+  font-family: "Marcellus", serif;
+  line-height: 1;
+  text-align: center;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.flowimg::before {
+  left: 0;
+  -webkit-animation: flowimg 40s linear infinite;
+          animation: flowimg 20s linear infinite;
+}
+
+.flowimg::after {
+  left: 100%;
+  -webkit-animation: flowimg 40s linear infinite;
+          animation: flowimg 20s linear infinite;
+}
+
+@-webkit-keyframes flowimg {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes flowimg {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@media screen and (max-width: 480px) {
+  .flowimg {
+    padding: 40px 10vw;
+  }
+}
+/*------- 
+ここからは無視して大丈夫です
+(タイトルなど)
+-------*/
+.title {
+  margin-bottom: 40px;
+  line-height: 1;
+  text-align: center;
+}
+.title h2 {
+  display: block;
+  font-style: 1.4rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+.title span {
+  font-family: "Marcellus", serif;
+}
+
+ul.box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.box li {
+  flex: 0 1 46%;
+  height: 30vw;
+  background-color: #565656;
+}/*# sourceMappingURL=main.css.map */

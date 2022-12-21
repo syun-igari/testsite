@@ -26,7 +26,7 @@ header::before {
   left: 0;
   bottom: 0;
   right: 0;
-  height: 100vh;
+  height: 100%;
   background-color: #000;
   z-index: -1;
   opacity: 0.3;
@@ -538,6 +538,4 @@ header::before {
     opacity: 0;
 }
 
-main {
-  height: 10000px;
-}
+
