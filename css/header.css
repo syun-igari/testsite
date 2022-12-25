@@ -15,21 +15,13 @@
 header {
   position: relative;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  background-color: #000;
-  z-index: -1;
-  opacity: 0.3;
+.header-wrapper {
+  width: 100%;
+  background-color: rgba(0,0,0,.2);
 }
 
 #slider {
@@ -537,5 +529,3 @@ header::before {
 .blurTrigger{
     opacity: 0;
 }
-
-
