@@ -433,7 +433,6 @@ header {
 -------------------------*/
 .scrolldown2 {
   position: absolute;
-  bottom: 30px;
   right: 5%;
 }
 
@@ -501,7 +500,6 @@ header {
 
 @media screen and (max-width: 1024px) {
   .scrolldown2 {
-    bottom: 28px;
     right: 50%;
   }
 }
