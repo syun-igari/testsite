@@ -501,7 +501,7 @@ header {
 
 @media screen and (max-width: 1024px) {
   .scrolldown2 {
-    bottom: 10%;
+    bottom: 28px;
     right: 50%;
   }
 }

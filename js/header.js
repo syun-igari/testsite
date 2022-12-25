@@ -6,11 +6,12 @@ let trigger2 = [...document.querySelectorAll('.bgappearTrigger')];
 let getscroll = document.querySelector('.scrolldown2');
 let header = document.querySelector('header');
 let header_wrapper = document.querySelector('.header-wrapper');
-let getheight = window.innerHeight;
+let scroll_bar = document.querySelector('.scrolldown2');
+let getHeight = window.innerHeight;
 
 
-header.style.height = getheight + 'px';
-header_wrapper.style.height = getheight + 'px';
+header.style.height = getHeight + 'px';
+header_wrapper.style.height = getHeight + 'px';
 mobilebtn.addEventListener('click', function () {
   mobilebtn.classList.toggle('action');
   navMenu.classList.toggle('active');

@@ -5,7 +5,7 @@ main {
 /*-------
 擬似要素テキストが流れる
 -------*/
-.flowimg {
+/* .flowimg {
   position: relative;
   padding: 10vw 10vw;
   overflow: hidden;
@@ -60,11 +60,9 @@ main {
   .flowimg {
     padding: 40px 10vw;
   }
+
+
 }
-/*------- 
-ここからは無視して大丈夫です
-(タイトルなど)
--------*/
 .title {
   margin-bottom: 40px;
   line-height: 1;
@@ -91,4 +89,6 @@ ul.box {
   flex: 0 1 46%;
   height: 30vw;
   background-color: #565656;
-}/*# sourceMappingURL=main.css.map */
+} */
+
+
