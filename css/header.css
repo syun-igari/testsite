@@ -431,16 +431,18 @@ header {
 /*-------------------------
   スクロールの設定
 -------------------------*/
-.scrolldown2 {
-  position: absolute;
-  right: 5%;
+/* .scrolldown2 {
+  position: relative;
+  height: 250px;
+  right: 25%;
+  bottom:80px
 }
 
 .scrolldown2 span {
   position: absolute;
   left: 10px;
   bottom: 10px;
-  color: #eee;
+  color: #000;
   font-size: 0.7rem;
   letter-spacing: 0.05em;
   -ms-writing-mode: tb-rl;
@@ -456,7 +458,7 @@ header {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #eee;
+  background: #000;
   animation:
     circlemove 1.6s ease-in-out infinite,
     cirlemovehide 1.6s ease-out infinite;
@@ -495,7 +497,7 @@ header {
   left: 0;
   width: 2px;
   height: 50px;
-  background: #eee;
+  background: #000;
 }
 
 @media screen and (max-width: 1024px) {
@@ -526,4 +528,42 @@ header {
  
 .blurTrigger{
     opacity: 0;
+} */
+
+.scrolldown1{
+  position: relative;
+  height: 60px;
+  bottom:60px;
+  color: #FFF;
+  text-align: center;
+}
+
+/* 線の描写 */
+.scrolldown1::after{
+	content: "";
+	position: absolute;
+	bottom:50%;
+  left: 50%;
+	width: 1px;
+	height: 30px;
+	background: #eee;
+	animation: pathmove 1.4s ease-in-out infinite;
+	opacity:0;
+}
+
+@keyframes pathmove{
+	0%{
+		height:0;
+		top:10px;
+		opacity: 0;
+	}
+	30%{
+		height:30px;
+		opacity: 1;
+	}
+	100%{
+		height:0;
+		top:50px;
+		opacity: 0;
+	}
 }

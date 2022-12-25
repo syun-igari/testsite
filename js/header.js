@@ -13,7 +13,7 @@ let getScrollHeight = window.innerHeight * 0.045;
 
 header.style.height = getHeight + 'px';
 header_wrapper.style.height = getHeight + 'px';
-scroll_bar.style.bottom = getScrollHeight + 'px'
+// scroll_bar.style.bottom = getScrollHeight + 'px'
 mobilebtn.addEventListener('click', function () {
   mobilebtn.classList.toggle('action');
   navMenu.classList.toggle('active');
