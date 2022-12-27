@@ -24,3 +24,33 @@ $('#slider').vegas({
 		slides: responsiveImage,//画像設定を読む
     timer:false,//プログレスバー非表示
 	});
+
+let imagesItems = [...document.querySelectorAll('.img-wrap')];
+let imgWrapper = document.querySelector('.section-top__wrapper');
+
+//監視対象が画面に入ったらactiveをつける
+let setItemActive = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+    // } else{
+    //   entry.target.classList.remove('active');
+    // }
+  })
+}
+
+//optionsで要素がどのくらい入ったら実行するかを調整できる（threshold)
+let options = {
+  rootMargin: '0px',
+  threshold: 0.5,
+}; 
+
+let observer = new IntersectionObserver(setItemActive, options);
+
+//画像を表示させる処理
+observer.observe(imgWrapper);
+imagesItems.map((item, index) => {
+  item.children[0].style.backgroundImage = `url(./img/home${index+1}.webp)`
+  observer.observe(item);
+})

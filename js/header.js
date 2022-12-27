@@ -3,10 +3,9 @@ let navMenu = document.querySelector('.nav__wrapper');
 let logoMenu = document.querySelector('.header-log');
 let trigger = [...document.querySelectorAll('.bgLRextendTrigger')];
 let trigger2 = [...document.querySelectorAll('.bgappearTrigger')];
-let getscroll = document.querySelector('.scrolldown2');
 let header = document.querySelector('header');
 let header_wrapper = document.querySelector('.header-wrapper');
-let scroll_bar = document.querySelector('.scrolldown2');
+let scroll_bar = document.querySelector('.scrolldown1');
 let getHeight = window.innerHeight;
 let getScrollHeight = window.innerHeight * 0.045;
 
@@ -28,7 +27,7 @@ window.addEventListener('load', function () {
   //   item.classList.add('bgappear');
   // })
   setTimeout('triggers();', 1500)
-  getscroll.classList.add('blur');
+  scroll_bar.classList.add('blur');
 })
 
 
