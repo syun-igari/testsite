@@ -26,7 +26,8 @@ $('#slider').vegas({
 	});
 
 let imagesItems = [...document.querySelectorAll('.img-wrap')];
-let imgWrapper = document.querySelector('.section-top__wrapper');
+let imgWrapper = document.querySelector('.img-wrapper');
+let phraseWrapper = document.querySelector('.phrase');
 let leftAnimeInner = [...document.querySelectorAll('.leftAnimeInner')];
 let leftAnime = [...document.querySelectorAll('.leftAnime')];
 let fadeUpTarget = [...document.querySelectorAll('.fadeTarget')];
@@ -86,6 +87,6 @@ let fadeUp = (entries) => {
 let LeftRightObserver = new IntersectionObserver(slideAnimeLeftRight, options);
 let RightLeftObserver = new IntersectionObserver(slideAnimeRightLeft, options);
 let fadeUpObserver = new IntersectionObserver(fadeUp, options);
-LeftRightObserver.observe(imgWrapper);
-RightLeftObserver.observe(imgWrapper);
-fadeUpObserver.observe(imgWrapper);
+LeftRightObserver.observe(phraseWrapper);
+RightLeftObserver.observe(phraseWrapper);
+fadeUpObserver.observe(phraseWrapper);
