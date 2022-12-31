@@ -27,6 +27,9 @@ $('#slider').vegas({
 
 let imagesItems = [...document.querySelectorAll('.img-wrap')];
 let imgWrapper = document.querySelector('.section-top__wrapper');
+let leftAnimeInner = [...document.querySelectorAll('.leftAnimeInner')];
+let leftAnime = [...document.querySelectorAll('.leftAnime')];
+let fadeUpTarget = [...document.querySelectorAll('.fadeTarget')];
 
 //監視対象が画面に入ったらactiveをつける
 let setItemActive = (entries) => {
@@ -54,3 +57,35 @@ imagesItems.map((item, index) => {
   item.children[0].style.backgroundImage = `url(./img/home${index+1}.webp)`
   observer.observe(item);
 })
+
+let slideAnimeLeftRight = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      leftAnime[0].classList.add('slideAnimeLeftRight');
+      leftAnime[1].classList.add('slideAnimeLeftRight');
+    }
+  })
+}
+let slideAnimeRightLeft = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      leftAnimeInner[0].classList.add('slideAnimeRightLeft');
+      leftAnimeInner[1].classList.add('slideAnimeRightLeft');
+    }
+  })
+}
+let fadeUp = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      fadeUpTarget[0].classList.add('fadeUp');
+      fadeUpTarget[1].classList.add('fadeUp');
+    }
+  })
+}
+
+let LeftRightObserver = new IntersectionObserver(slideAnimeLeftRight, options);
+let RightLeftObserver = new IntersectionObserver(slideAnimeRightLeft, options);
+let fadeUpObserver = new IntersectionObserver(fadeUp, options);
+LeftRightObserver.observe(imgWrapper);
+RightLeftObserver.observe(imgWrapper);
+fadeUpObserver.observe(imgWrapper);
