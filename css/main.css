@@ -115,6 +115,9 @@ main{
     margin-top: 10px; 
     margin-bottom: 80px; 
   }
+  .section-top__title{
+    font-size: 3.5rem;
+  }
   .section-top__wrapper{
     display: block;
   }
@@ -425,7 +428,27 @@ main{
 }
 
 .service p{
-  width: 320px;
+  width: 60%;
+}
+@media screen and (max-width: 1045px) {
+  .service__phrase{
+    display: block;
+  }
+  .service h2{
+    font-size: 3.5rem;
+    letter-spacing: 10px;
+    text-align: center;
+  }
+  
+  .sub-title{
+    font-size: 1.5rem;
+    letter-spacing: 0;
+    display: block;
+  }
+  .service p{
+    width: 60%;
+    margin: 0 auto;
+  }
 }
 @media screen and (max-width: 576px) {
   .service__phrase{
@@ -444,6 +467,7 @@ main{
   .service p{
     margin: 20px auto;
     font-size: 0.8rem;
+    width: 320px;
   }
 }
 
