@@ -114,15 +114,7 @@ let serviceFade = (entries) => {
     }
   })
 }
-let serviceback = (entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      sectionService.style.background = 'blue';
-      sectionService.style.color = '#FFF';
-      sectionService.style.transition = '0.5s';
-    }
-  })
-}
+
 
 
 let LeftRightObserver = new IntersectionObserver(slideAnimeLeftRight, options);

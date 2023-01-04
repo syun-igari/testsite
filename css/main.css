@@ -8,6 +8,8 @@ main{
   width: 100%;
   position: relative;
   padding-top: 50px;
+  max-width: 1500px;
+  margin:  0 auto;
 }
 .section-top__title{
   margin:0 auto 60px auto;
@@ -408,7 +410,7 @@ main{
   -------------------------*/
   .service{
     padding-bottom: 20px;
-    color: #fff;
+    height: 100vh;
   }
   .service__phrase{
     margin-top: 80px;
@@ -419,6 +421,7 @@ main{
 .service h2{
   font-size: 5rem;
   letter-spacing: 10px;
+  color: yellow;
 }
 
 .sub-title{
@@ -426,9 +429,12 @@ main{
   letter-spacing: 0;
   display: block;
 }
-
+.service h3{
+  color: yellow;
+}
 .service p{
   width: 60%;
+  color: #FFF;
 }
 @media screen and (max-width: 1045px) {
   .service__phrase{
@@ -471,10 +477,10 @@ main{
   }
 }
 
-/*==================================================
-スライダーのためのcss
-===================================*/
-.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+/*-------------------------
+  画像スライド
+-------------------------*/
+.slider {
   width:94%;
   margin:50px auto;
 }
@@ -487,18 +493,15 @@ main{
   margin-top: 10px;
 }
 .slider img {
-   width:100%;/*スライダー内の画像を横幅100%に*/
+   width:100%;
    height:auto;
    border-radius: 10px;
 }
-
-/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
 
 .slider .slick-slide {
    margin:0 10px;
 }
 
-/*矢印の設定*/
 
 /*戻る、次へ矢印の位置*/
 .slick-prev, 
@@ -542,9 +545,9 @@ main{
    height:8px;/*ドットボタンのサイズ*/
    display:block;
    border-radius:50%;
-   background:#ccc;/*ドットボタンの色*/
+   background:#FFF;/*ドットボタンの色*/
 }
 
 .slick-dots .slick-active button{
-   background:#333;/*ドットボタンの現在地表示の色*/
+   background:yellow;
 }
