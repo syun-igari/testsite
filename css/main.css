@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 main{
   font-family: 'Roboto Condensed', sans-serif;
+  background-color: #FFF;
 }
 
 .section-top{
@@ -550,4 +551,138 @@ main{
 
 .slick-dots .slick-active button{
    background:yellow;
+}
+
+/*-------------------------
+  section other
+-------------------------*/
+.other-wrapper{
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+.other-btn{
+  width: 400px;
+  margin:40px;
+}
+.other-btn a{
+  width: 100%;
+  height: 250px;
+  text-align: center;
+ background-color:#000080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-size: 2rem;
+}
+
+/*-------
+擬似要素テキストが流れる
+-------*/
+.flowimg {
+  position: relative;
+  padding: 3vw 10vw;
+  overflow: hidden;
+}
+
+.flowimg::before,
+.flowimg::after {
+  content: "WEARECOMPANY";
+  position: absolute;
+  bottom: 40%;
+  width: 100%;
+  height: auto;
+  color: #000080;
+  font-size: 11vw;
+  font-family: "Marcellus", serif;
+  line-height: 1;
+  text-align: center;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.flowimg::before {
+  left: 0;
+  -webkit-animation: flowimg 40s linear infinite;
+          animation: flowimg 20s linear infinite;
+}
+
+.flowimg::after {
+  left: 100%;
+  -webkit-animation: flowimg 40s linear infinite;
+          animation: flowimg 20s linear infinite;
+}
+
+@-webkit-keyframes flowimg {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes flowimg {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@media screen and (max-width: 480px) {
+  .flowimg {
+    padding: 40px 10vw;
+  }
+
+
+}
+.title {
+  margin-bottom: 40px;
+  line-height: 1;
+  text-align: center;
+}
+.title h2 {
+  display: block;
+  font-style: 1.4rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+.title span {
+  font-family: "Marcellus", serif;
+}
+
+ul.box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.box li {
+  flex: 0 1 46%;
+  height: 30vw;
+  background-color: #565656;
+}
+
+
+/*-------------------------
+  section other
+-------------------------*/
+
+.other__title{
+  font-size: 5rem;
+  letter-spacing: 10px;
+  text-align: right;
+  margin:20px 50px 0 0;
+  color: #000080;
+}
+
+.other__sub-title{
+  font-size: 1.5rem;
+  display: block;
 }

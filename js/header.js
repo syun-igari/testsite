@@ -3,15 +3,15 @@ let navMenu = document.querySelector('.nav__wrapper');
 let logoMenu = document.querySelector('.header-log');
 let trigger = [...document.querySelectorAll('.bgLRextendTrigger')];
 let trigger2 = [...document.querySelectorAll('.bgappearTrigger')];
-let header = document.querySelector('header');
-let header_wrapper = document.querySelector('.header-wrapper');
-let scroll_bar = document.querySelector('.scrolldown1');
-let getHeight = window.innerHeight;
-let getScrollHeight = window.innerHeight * 0.045;
+let slider = document.querySelector('#slider');
+let topContent = document.querySelector('.top-content');
+// let header_wrapper = document.querySelector('.header-wrapper');
+let getHeight = window.innerHeight - 100;
+let getScrollHeight = window.innerHeight - 100;
 
 
-header.style.height = getHeight + 'px';
-header_wrapper.style.height = getHeight + 'px';
+slider.style.height = getHeight + 'px';
+topContent.style.height = getScrollHeight + 'px';
 // scroll_bar.style.bottom = getScrollHeight + 'px'
 mobilebtn.addEventListener('click', function () {
   mobilebtn.classList.toggle('action');
@@ -20,14 +20,8 @@ mobilebtn.addEventListener('click', function () {
 })
 
 window.addEventListener('load', function () {
-  // trigger.map((item, index) => {
-  //   item.classList.add('bgLRextend');
-  // })
-  // trigger2.map((item, index) => {
-  //   item.classList.add('bgappear');
-  // })
   setTimeout('triggers();', 1500)
-  scroll_bar.classList.add('blur');
+  slider.classList.add('isPlay');
 })
 
 
