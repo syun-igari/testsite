@@ -21,9 +21,9 @@ mobilebtn.addEventListener('click', function () {
 })
 
 window.addEventListener('load', function () {
-  setTimeout('triggers();', 1500);
-  setTimeout('headerActive();', 2500);
-  slider.classList.add('isPlay');
+  setTimeout('triggers();', 2200);
+  setTimeout('headerActive();', 3000);
+  setTimeout('sliderAnimation();', 1000);
 })
 
 
@@ -39,4 +39,8 @@ function triggers() {
 
 function headerActive() {
   header.classList.add('active')
+}
+
+function sliderAnimation() {
+  slider.classList.add('isPlay');
 }
