@@ -5,6 +5,7 @@ let trigger = [...document.querySelectorAll('.bgLRextendTrigger')];
 let trigger2 = [...document.querySelectorAll('.bgappearTrigger')];
 let slider = document.querySelector('#slider');
 let topContent = document.querySelector('.top-content');
+let header = document.querySelector('header');
 // let header_wrapper = document.querySelector('.header-wrapper');
 let getHeight = window.innerHeight - 100;
 let getScrollHeight = window.innerHeight - 100;
@@ -20,7 +21,8 @@ mobilebtn.addEventListener('click', function () {
 })
 
 window.addEventListener('load', function () {
-  setTimeout('triggers();', 1500)
+  setTimeout('triggers();', 1500);
+  setTimeout('headerActive();', 2500);
   slider.classList.add('isPlay');
 })
 
@@ -33,4 +35,8 @@ function triggers() {
   trigger2.map((item, index) => {
     item.classList.add('bgappear');
   })
+}
+
+function headerActive() {
+  header.classList.add('active')
 }

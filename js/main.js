@@ -27,6 +27,7 @@ $('#slider').vegas({
 
 let imagesItems = [...document.querySelectorAll('.img-wrap')];
 let imgWrapper = document.querySelector('.img-wrapper');
+let sectionWrapper = document.querySelector('.section-top__wrapper');
 let phraseWrapper = document.querySelector('.phrase');
 let leftAnimeInner = [...document.querySelectorAll('.leftAnimeInner')];
 let leftAnime = [...document.querySelectorAll('.leftAnime')];
@@ -34,6 +35,7 @@ let fadeUpTarget = [...document.querySelectorAll('.fadeTarget')];
 let sectionService = document.querySelector('.service');
 let sectionTopTitle = document.querySelector('.section-top__title');
 let sectionTop = document.querySelector('.section-top');
+let sliders = document.querySelector('.slider');
 
 //監視対象が画面に入ったらactiveをつける
 let setItemActive = (entries) => {
@@ -41,9 +43,6 @@ let setItemActive = (entries) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('active');
     }
-    // } else{
-    //   entry.target.classList.remove('active');
-    // }
   })
 }
 
@@ -53,8 +52,8 @@ let options = {
   threshold: 0.5,
 }; 
 let options2 = {
-  rootMargin: '20px',
-  threshold: 1,
+  rootMargin: '5px',
+  threshold: 0.5,
 }; 
 
 let observer = new IntersectionObserver(setItemActive, options);
@@ -109,8 +108,9 @@ let serviceFade = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       fadeUpTarget[2].classList.add('fadeUp');
+      fadeUpTarget[3].classList.add('fadeUp');
       sectionService.style.background = '#000060';
-      sectionService.style.transition = '1s';
+      sectionService.style.transition = '0.5s';
     }
   })
 }

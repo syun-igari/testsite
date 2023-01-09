@@ -170,7 +170,7 @@ main{
       position: absolute;
       top:-20px;
       right: -20px;
-      z-index: -1;
+      z-index: 0;
   
   }
   
@@ -243,7 +243,7 @@ main{
       position: absolute;
       top:-20px;
       right: -20px;
-      z-index: -1;
+      z-index: 0;
   
   }
   .img-wrap{
@@ -601,7 +601,7 @@ main{
   font-family: "Marcellus", serif;
   line-height: 1;
   text-align: center;
-  z-index: -1;
+  z-index: 0;
   opacity: 0.1;
 }
 
