@@ -25,6 +25,7 @@
 
 #loader.loaded {
   animation: fadeOut 0.5s forwards;
+  background-color: #FFF;
 }
 
 .spinner {
